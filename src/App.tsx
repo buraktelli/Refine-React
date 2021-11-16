@@ -27,6 +27,7 @@ function App() {
             show: PostShow,
             edit: PostEdit,
             create: PostCreate,
+            canDelete: true
           }
         ]
       }
