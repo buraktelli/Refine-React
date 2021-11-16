@@ -10,6 +10,7 @@ import "@pankod/refine/dist/styles.min.css";
 import { PostList } from "./components/list";
 import { PostShow } from "./components/show";
 import { PostEdit } from "./components/edit";
+import { PostCreate } from "./components/create";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             list: PostList,
             show: PostShow,
             edit: PostEdit,
+            create: PostCreate,
           }
         ]
       }
