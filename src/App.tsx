@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import { Refine } from "@pankod/refine";
+import routerProvider from "@pankod/refine-react-router";
+import dataProvider from "@pankod/refine-simple-rest";
+
+import "@pankod/refine/dist/styles.min.css";
+
+import { PostList } from "./components/list";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Refine
+      routerProvider={routerProvider}
+      // dataProvider={dataProvider("https://dev-gis.ankageo.com/rest/v1")}
+      // resources={[{ name: "layers", list: PostList }]}
+      dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+      resources={[{ name: "posts", list: PostList }]}
+    />
   );
 }
 
