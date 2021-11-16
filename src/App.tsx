@@ -8,6 +8,7 @@ import dataProvider from "@pankod/refine-simple-rest";
 import "@pankod/refine/dist/styles.min.css";
 
 import { PostList } from "./components/list";
+import { PostShow } from "./components/show";
 
 function App() {
   return (
@@ -16,7 +17,15 @@ function App() {
       // dataProvider={dataProvider("https://dev-gis.ankageo.com/rest/v1")}
       // resources={[{ name: "layers", list: PostList }]}
       dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
-      resources={[{ name: "posts", list: PostList }]}
+      resources={
+        [
+          {
+            name: "posts",
+            list: PostList,
+            show: PostShow,
+          }
+        ]
+      }
     />
   );
 }
