@@ -4,6 +4,7 @@ import './App.css';
 import { Refine } from "@pankod/refine";
 import routerProvider from "@pankod/refine-react-router";
 import dataProvider from "@pankod/refine-simple-rest";
+import authProvider from "./providers/models/authProvider"
 
 import "@pankod/refine/dist/styles.min.css";
 
@@ -11,6 +12,7 @@ import { PostList } from "./components/list";
 import { PostShow } from "./components/show";
 import { PostEdit } from "./components/edit";
 import { PostCreate } from "./components/create";
+import { Login } from "./components/login";
 
 // import { DevList } from "./dev-gis/list";
 // import { SimpleRestDataProvider } from "./providers/dataProvider";
@@ -18,9 +20,7 @@ import { PostCreate } from "./components/create";
 function App() {
   return (
     <Refine
-      // dataProvider={SimpleRestDataProvider}
-
-
+    authProvider= {authProvider}
     routerProvider={routerProvider}
     dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
     resources={
@@ -35,6 +35,7 @@ function App() {
         }
       ]
     }
+    LoginPage={Login}
     />
   );
 }
