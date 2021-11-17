@@ -5,6 +5,12 @@ export interface IPost {
     category: { id: string };
     createdAt: string;
 }
+export interface ILayer {
+    id: string;
+    name: string;
+    alias: string;
+    style_id: number;
+}
 
 export interface ICategory {
     id: string;
